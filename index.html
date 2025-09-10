@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kashish Patel — AI/ML Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Kashish Patel — AI/ML Engineer. Portfolio showcasing projects in multimodal fusion, LLM fine-tuning, and computer vision.">
+  <meta name="keywords" content="Kashish Patel, AI Engineer, Machine Learning, Portfolio, Multimodal AI, LLM, Computer Vision, NLP">
+  <meta name="author" content="Kashish Patel">
+
+  <!-- Open Graph (OG) Meta Tags for social sharing -->
+  <meta property="og:title" content="Kashish Patel — AI/ML Engineer">
+  <meta property="og:description" content="Explore Kashish Patel’s projects in multimodal learning, LLM fine-tuning, and AI research.">
+  <meta property="og:image" content="https://kp-kashish.github.io/Portfolio_website/assets/og-card.jpg">
+  <meta property="og:url" content="https://kp-kashish.github.io/Portfolio_website/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card (for nice Twitter/LinkedIn previews) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kashish Patel — AI/ML Engineer">
+  <meta name="twitter:description" content="Portfolio showcasing AI/ML projects including multimodal fusion, LLM fine-tuning, and computer vision.">
+  <meta name="twitter:image" content="https://kp-kashish.github.io/Portfolio_website/assets/og-card.jpg">
+
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ================= THEME (blue–purple accents) ================= */
+    :root {
+      --accent1: #7AA2FF;
+      /* blue */
+      --accent2: #C084FC;
+      /* purple */
+
+      --name1: color-mix(in oklab, var(--accent1) 70%, #ffffff 30%);
+      --name2: color-mix(in oklab, var(--accent2) 75%, #ffffff 25%);
+
+      /* dark */
+      --bg: #0b0f16;
+      --glow: radial-gradient(880px 560px at 12% 8%, #22263a 0%, rgba(0, 0, 0, 0) 55%);
+      --text: #EBECF2;
+      --muted: #9ea5b6;
+      --surface: #111624;
+      --border: #1b2232;
+
+      --chip-bg: color-mix(in oklab, var(--accent1)14%, transparent);
+      --chip-br: color-mix(in oklab, var(--accent1)34%, var(--border)66%);
+      --chip-tx: color-mix(in oklab, var(--text)88%, var(--accent1)12%);
+
+      --link: color-mix(in oklab, var(--accent1) 68%, var(--accent2) 32%);
+      --shadow: 0 18px 50px rgba(0, 0, 0, .35);
+    }
+
+    html[data-theme="light"] {
+      /* keep accents, flip surfaces to white */
+      --bg: #ffffff;
+      --glow: radial-gradient(880px 560px at 16% 10%, #EEF2FF 0%, rgba(238, 242, 255, 0) 62%);
+      --text: #0b1320;
+      --muted: #57627a;
+      --surface: #ffffff;
+      --border: #e6eaf3;
+
+      --chip-bg: color-mix(in oklab, var(--accent2) 8%, #ffffff 92%);
+      --chip-br: color-mix(in oklab, var(--accent2) 20%, var(--border) 80%);
+      --chip-tx: color-mix(in oklab, var(--text) 90%, var(--accent2) 10%);
+
+      --name1: color-mix(in oklab, var(--accent1) 55%, var(--text) 45%);
+      --name2: color-mix(in oklab, var(--accent2) 58%, var(--text) 42%);
+      --shadow: 0 18px 48px rgba(9, 12, 22, .06);
+    }
+
+    /* ================= BASE ================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      line-height: 1.65;
+      background: var(--bg);
+      background-image: var(--glow);
+      background-attachment: fixed;
+      transition: background .35s ease, color .35s ease;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px)
+    }
+
+    .link {
+      color: var(--link)
+    }
+
+    /* Accessiblity helpers */
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      z-index: 1000
+    }
+
+    .skip:focus {
+      left: 10px;
+      top: 10px
+    }
+
+    :focus-visible {
+      outline: 2px dashed color-mix(in oklab, var(--accent2)80%, #fff 20%);
+      outline-offset: 4px;
+      border-radius: 6px
+    }
+
+    /* ================= HEADER ================= */
+    .header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 76px;
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      background: transparent;
+    }
+
+    .social {
+      display: flex;
+      gap: 16px
+    }
+
+    .icon-link {
+      font-size: 18px;
+      color: var(--muted);
+      transition: .2s
+    }
+
+    .icon-link:hover {
+      color: var(--text)
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .toggle {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      cursor: pointer
+    }
+
+    .toggle i {
+      font-size: 16px;
+      color: var(--muted)
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      min-height: 92svh;
+      display: grid;
+      align-items: center;
+      padding-top: 76px
+    }
+
+    .hero-grid {
+      display: grid;
+      align-items: center;
+      grid-template-columns: minmax(420px, 1fr) 420px;
+      column-gap: 110px;
+      row-gap: 28px
+    }
+
+    .h-eyebrow {
+      font-family: 'Space Grotesk', system-ui;
+      font-size: clamp(40px, 5.6vw, 56px);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    @media (max-width:1200px) {
+      .h-eyebrow {
+        white-space: normal
+      }
+    }
+
+    .grad {
+      background: linear-gradient(90deg, var(--name1), var(--name2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .role {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: color-mix(in oklab, var(--text)86%, var(--accent1)14%)
+    }
+
+    .type-row {
+      margin-top: 16px
+    }
+
+    .typewrap {
+      font-size: clamp(18px, 1.7vw, 22px);
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      display: inline-block;
+      min-height: 1.4em
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--text);
+      margin-left: 3px;
+      vertical-align: -2px;
+      animation: blink 1s steps(1) infinite
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0
+      }
+    }
+
+    .hero-links {
+      margin-top: 22px;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .hero-links a {
+      color: var(--muted)
+    }
+
+    .hero-links a:hover {
+      color: var(--text);
+      text-decoration: underline
+    }
+
+    .profile-wrap {
+      display: grid;
+      place-items: center
+    }
+
+    .profile {
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid color-mix(in oklab, var(--surface) 82%, transparent);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .35), 0 0 0 1px var(--border);
+      background: #cfd6de;
+    }
+
+    @media (max-width:1280px) {
+      .hero-grid {
+        grid-template-columns: minmax(380px, 1fr) 360px;
+        column-gap: 70px
+      }
+
+      .profile {
+        width: 340px;
+        height: 340px
+      }
+    }
+
+    @media (max-width:1050px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        row-gap: 18px
+      }
+
+      .profile {
+        width: 300px;
+        height: 300px
+      }
+    }
+
+    /* ================= SECTIONS ================= */
+    .section {
+      padding: 110px 0
+    }
+
+    .title {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 300;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 60px
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center
+    }
+
+    .about img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow)
+    }
+
+    .lead {
+      font-size: 20px;
+      color: var(--text)
+    }
+
+    .list {
+      max-width: 980px;
+      margin: 0 auto
+    }
+
+    .row {
+      padding: 26px 0;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 180px 1fr;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .row:last-child {
+      border-bottom: none
+    }
+
+    .when {
+      font-size: 13px;
+      letter-spacing: .15em;
+      color: var(--muted)
+    }
+
+    .what {
+      font-size: 18px;
+      font-weight: 700
+    }
+
+    .where {
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    .bullets {
+      margin-top: 10px;
+      color: var(--muted)
+    }
+
+    .bullets li {
+      margin: 6px 0
+    }
+
+    .stack {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-br);
+      color: var(--chip-tx);
+      backdrop-filter: saturate(120%)
+    }
+
+    .links {
+      margin-top: 10px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow)
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 10px
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start
+    }
+
+    .contact-item i {
+      margin-top: 4px;
+      color: var(--muted)
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 12px
+    }
+
+    .form textarea {
+      height: 140px;
+      resize: vertical
+    }
+
+    .form .actions {
+      margin-top: 12px
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal {
+        transition: none
+      }
+    }
+
+    @media (max-width:980px) {
+      .about {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .row {
+        grid-template-columns: 1fr
+      }
+
+      .contact {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media (max-width:860px) {
+      .container {
+        padding: 0 22px
+      }
+    }
+
+    /* ================= Skills — grouped chips with % on hover ================= */
+    .skills-groups {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px
+    }
+
+    .skills-group {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      box-shadow: var(--shadow)
+    }
+
+    .skills-group h3 {
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none
+    }
+
+    .skill-chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--chip-br);
+      background: var(--chip-bg);
+      color: var(--chip-tx);
+      transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+      backdrop-filter: saturate(120%);
+      overflow: hidden;
+    }
+
+    .skill-chip>span {
+      transition: opacity .12s ease
+    }
+
+    .skill-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .12)
+    }
+
+    .skill-chip[data-pct]:hover>span {
+      opacity: 0
+    }
+
+    .skill-chip[data-pct]::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .12s ease;
+      background: color-mix(in oklab, var(--accent1)12%, transparent)
+    }
+
+    .skill-chip[data-pct]:hover::after {
+      opacity: 1
+    }
+
+    .skill-chip[data-pct]::before {
+      content: attr(data-pct) '%';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--text);
+      opacity: 0;
+      transition: opacity .12s ease
+    }
+
+    .skill-chip[data-pct]:hover::before {
+      opacity: 1
+    }
+
+    /* ================= Projects — Horizontal Scroller ================= */
+    .projects-shell {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .projects-scroller {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .projects-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      /* keep native momentum */
+      overflow-y: hidden;
+      padding: 6px 12px 18px;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 12px;
+
+      /* hide scrollbar cross-browser */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE/Edge legacy */
+    }
+
+    .projects-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* WebKit */
+
+    .project-card {
+      flex: 0 0 360px;
+      /* card width */
+      scroll-snap-align: start;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 4px
+    }
+
+    .project-card .where {
+      margin: 4px 0 10px
+    }
+
+    .project-card .bullets {
+      margin-left: 18px
+    }
+
+    .project-card .stack {
+      margin-top: 12px
+    }
+
+    .project-card .links {
+      margin-top: auto
+    }
+
+    /* Edge fades (smooth, no visible box, auto-hide at ends) */
+    .projects-scroller::before,
+    .projects-scroller::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .25s ease;
+      /* use page background so it blends in both themes */
+    }
+
+    .projects-scroller::before {
+      left: -1px;
+      background: linear-gradient(90deg, var(--bg) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .projects-scroller::after {
+      right: -1px;
+      background: linear-gradient(-90deg, var(--bg) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .projects-scroller.has-left::before {
+      opacity: 1
+    }
+
+    .projects-scroller.has-right::after {
+      opacity: 1
+    }
+
+    /* Arrow buttons (hide at ends) */
+    .proj-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      z-index: 4;
+      cursor: pointer;
+      transition: opacity .2s ease, transform .15s ease;
+    }
+
+    .proj-arrow:hover {
+      transform: translateY(-50%) scale(1.04)
+    }
+
+    .proj-arrow[disabled] {
+      opacity: .35;
+      pointer-events: none
+    }
+
+    .proj-prev {
+      left: -6px
+    }
+
+    .proj-next {
+      right: -6px
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#about" class="skip">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="social">
+      <a class="icon-link" href="https://www.linkedin.com/in/kashish-patel29/" target="_blank" aria-label="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a class="icon-link" href="https://github.com/kp-kashish" target="_blank" aria-label="GitHub"><i
+          class="fab fa-github"></i></a>
+      <a class="icon-link" href="https://www.instagram.com/kp_kashish?igsh=bXdwaWZ2ZDAxYzBj&utm_source=qr"
+        target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="actions">
+      <a class="btn" href="assets\Kashish_Cv.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+      <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"
+          id="themeIcon"></i></button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1 class="h-eyebrow">Hey, I'm <span class="grad">KASHISH PATEL</span></h1>
+          <div class="role">AI / ML Engineer</div>
+          <div class="type-row">
+            <span class="typewrap" id="typed"></span><span class="cursor" aria-hidden="true"></span>
+          </div>
+          <nav class="hero-links" aria-label="Sections">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+          </nav>
+        </div>
+
+        <div class="profile-wrap">
+          <img class="profile" src="assets\Image_hero.png" alt="Kashish Patel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAIN ================= -->
+  <main class="container">
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="title reveal">About me</h2>
+      <div class="about">
+        <img class="reveal" src="assets\Image.jpg" alt="Kashish Patel" loading="lazy">
+        <div class="reveal" style="max-width: 800px; text-align: justify; line-height: 1.8; margin: auto;">
+          <p>
+            Hey 👋🏼 I am a Computer Science Master’s student based in Germany, specializing in
+            Intelligent Systems with a passion for Artificial Intelligence and machine learning.
+            My projects range from real-time face recognition to multi-view learning for Earth
+            Observation and fine-tuning large language models for translation. With a
+            background in Android development, I bring a user-focused approach to AI
+            solutions, and I’m currently applying my skills through my internship at <strong>AICU</strong>
+            and my thesis at <strong>DFKI</strong>, while exploring opportunities in Machine Learning,
+            Multimodal AI, and applied AI research.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="title reveal">Experience</h2>
+      <div class="list">
+
+        <div class="row reveal">
+          <div class="when">AUG 2025 — PRESENT</div>
+          <div>
+            <div class="what">Multimodal AI Intern</div>
+            <div class="where">AICU · Remote/Part-time</div>
+            <ul class="bullets">
+              <li>Researched and implemented fusion techniques for multimodal datasets.</li>
+              <li>Developed efficient training/evaluation pipelines; documented experiments for reproducibility.</li>
+              <li>Conducted efficiency comparisons across accuracy, training time, and inference speed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row reveal">
+          <div class="when">JUL 2025 — PRESENT</div>
+          <div>
+            <div class="what">Master Thesis Student</div>
+            <div class="where">DFKI(German Research Center for AI) · Hybrid/Full-time </div>
+            <ul class="bullets">
+              <li>Conducting research on robustness in multi-view deep learning models for Earth Observation at DFKI.
+              </li>
+              <li>Investigating the impact of input noise on latent space structure using probabilistic modeling
+                techniques.</li>
+              <li>Developing uncertainty-aware fusion methods to enhance AI model interpretability and resilience in
+                real-world scenarios.</li>
+              <li>Utilizing datasets such as CloudSen12, EuroSAT-SAR and Treesatai- TS to validate findings and improve
+                model performance.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row reveal">
+          <div class="when">DEC 2021 — JUL 2022</div>
+          <div>
+            <div class="what">Android Developer</div>
+            <div class="where">Dominant Infotech — India</div>
+            <ul class="bullets">
+              <li>Collaborated with the Android development team to design, build, and test the SnackEatUp and DocsApp
+                applications.</li>
+              <li>Developed Android apps using Java and Kotlin with MVVM architecture and Jetpack components.</li>
+              <li>Integrated APIs, managed local databases, and implemented user authentication.
+              <li>Ensured app stability, usability, and performance through testing and debugging.</li>
+              </li>
+              <li>Implemented offline support with SQLite and Room Database.</li>
+              <li>Used Git for version control and participated in Agile sprints to meet release deadlines.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2 class="title reveal">Education</h2>
+      <div class="list">
+
+        <div class="row reveal">
+          <div class="when">OCT 2022 — PRESENT</div>
+          <div>
+            <div class="what">M.Sc. Computer Science</div>
+            <div class="where">RPTU Kaiserslautern-Landau · Major: Intelligent Systems · Minor: Software Engineering
+            </div>
+            <ul class="bullets">
+              <li>Research Seminar: Survey of Multi-Modal Generative AI Tools in Education and Creative Industries.</li>
+              <li>Coursework: Deep Learning, Machine Learning, Social Web Mining, Data Visualization, Very Deep
+                Learning, Collaborative Intelligence.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row reveal">
+          <div class="when">2018 — 2022</div>
+          <div>
+            <div class="what">B.Tech Computer Engineering</div>
+            <div class="where">CGPIT, Uka Tarsadia University</div>
+            <ul class="bullets">
+              <li>CGPA of 9.08/10</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects (Horizontal) -->
+    <section id="projects" class="section">
+      <h2 class="title reveal">Projects</h2>
+
+      <div class="projects-shell reveal">
+        <button class="proj-arrow proj-prev" id="projPrev" aria-label="Previous"><i
+            class="fa-solid fa-chevron-left"></i></button>
+        <div class="projects-scroller" id="projScroller">
+          <div class="projects-track" id="projTrack">
+
+            <!-- Card 1 -->
+            <article class="project-card">
+              <h3>Deep Multi-View Information Bottleneck</h3>
+              <ul class="bullets">
+                <li>Built and evaluated a multi-view framework combining satellite, radar, and weather data across LFMC,
+                  Yield Cereals, and PM2.5 datasets.</li>
+                <li>Benchmarked 7 fusion techniques, including stochastic VAEs and deterministic baselines, to analyze
+                  uncertainty modeling.</li>
+                <li>Achieved the best performance with feature-level stochastic fusion, reaching an average R² of 0.64
+                  and RMSE of 23.4.</li>
+              </ul>
+              <div class="stack"><span class="tag">PyTorch</span><span class="tag">Multi-View</span><span class="tag">VAE/IB</span><span
+                  class="tag">Fusion</span>
+              <div class="links"><a class="link"
+                  href="https://github.com/kp-kashish/Deep-Multi-view-Information-Bottleneck-Methods-Implementation"
+                  target="_blank"><i class="fa-brands fa-github"></i> Code</a></div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="project-card">
+              <h3>LLM Fine-Tuning for German↔French Translation</h3>
+              <ul class="bullets">
+                <li>Fine-tuned FLAN-T5 Large using LoRA on 800 real and 1,600 synthetic German–French sentence pairs
+                  from Europarl and Groq API.</li>
+                <li>Compared baseline, real-only, synthetic-only, and hybrid datasets to study fine-tuning and data
+                  augmentation impact.</li>
+                <li>Improved BLEU score to 20.8 (from 18.6) with hybrid training, showing gains in low-resource MT
+                  tasks.</li>
+              </ul>
+              <div class="stack"><span class="tag">Python</span><span class="tag">LoRA-Finetuning</span><span
+                  class="tag">NLP</span><span class="tag">Groq API</span></div>
+              <div class="links"><a class="link"
+                  href="https://github.com/kp-kashish/Fine-Tuning-LLM-for-German-to-French-Translation"
+                  target="_blank"><i class="fa-brands fa-github"></i> Code</a></div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="project-card">
+              <h3>Face Recognition Attendance System</h3>
+              <ul class="bullets">
+                <li>Designed a Raspberry Pi + OpenCV–based real-time attendance system with >90% face recognition
+                  accuracy.</li>
+                <li>Integrated lightweight deep learning models for robust performance in variable lighting and
+                  classroom conditions.</li>
+                <li>Reduced frame processing time by 30% through NumPy optimization and asynchronous image capture.</li>
+              </ul>
+              <div class="stack"><span class="tag">OpenCV</span><span class="tag">NumPy</span><span
+                    class="tag">Raspberry Pi</span></div>
+              <div class="links"><a class="link" href="https://github.com/kp-kashish" target="_blank"><i
+                    class="fa-brands fa-github"></i> Code</a></div>
+            </article>
+
+            <!-- Card 4  -->
+            <article class="project-card">
+              <h3>SnackEatUp – Food Ordering Android Application</h3>
+              <ul class="bullets">
+                <li>Developed a full-stack Android application with category-based menus, cart management, and order
+                  placement.</li>
+                <li>Implemented Firebase for real-time authentication, database management, and order tracking.</li>
+                <li>Built as a team project to digitize snack ordering, improving service speed and reducing manual
+                  errors.</li>
+              </ul>
+              <div class="stack"><span class="tag">Android</span><span class="tag">Kotlin</span><span
+                    class="tag">Firebase</span></div>
+              <div class="links"><a class="link" href="https://github.com/kp-kashish" target="_blank"><i
+                    class="fa-brands fa-github"></i> Code</a></div>
+            </article>
+
+          </div>
+        </div>
+        <button class="proj-arrow proj-next" id="projNext" aria-label="Next"><i
+            class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="title reveal">Skills</h2>
+      <div class="skills-groups">
+
+        <div class="skills-group reveal">
+          <h3>Languages</h3>
+          <ul class="skill-chips">
+            <li class="skill-chip" data-pct="80"><span>Java</span></li>
+            <li class="skill-chip" data-pct="90"><span>Python</span></li>
+            <li class="skill-chip" data-pct="60"><span>C/C++</span></li>
+            <li class="skill-chip" data-pct="60"><span>SQL</span></li>
+            <li class="skill-chip" data-pct="80"><span>HTML/CSS</span></li>
+          </ul>
+        </div>
+
+        <div class="skills-group reveal">
+          <h3>Frameworks</h3>
+          <ul class="skill-chips">
+            <li class="skill-chip" data-pct="70"><span>TensorFlow</span></li>
+            <li class="skill-chip" data-pct="85"><span>PyTorch</span></li>
+            <li class="skill-chip" data-pct="75"><span>Hugging Face Transformers</span></li>
+            <li class="skill-chip" data-pct="85"><span>scikit-learn</span></li>
+            <li class="skill-chip" data-pct="60"><span>Keras</span></li>
+            <li class="skill-chip" data-pct="40"><span>WordPress</span></li>
+            <li class="skill-chip" data-pct="70"><span>FastAPI</span></li>
+            <li class="skill-chip" data-pct="65"><span>LoRA Developer</span></li>
+          </ul>
+        </div>
+
+        <div class="skills-group reveal">
+          <h3>Tools</h3>
+          <ul class="skill-chips">
+            <li class="skill-chip" data-pct="80"><span>Git</span></li>
+            <li class="skill-chip" data-pct="90"><span>Google Colab</span></li>
+            <li class="skill-chip" data-pct="60"><span>Raspberry Pi</span></li>
+            <li class="skill-chip" data-pct="70"><span>Postman</span></li>
+            <li class="skill-chip" data-pct="60"><span>Firebase Console</span></li>
+            <li class="skill-chip" data-pct="90"><span>Android Studio</span></li>
+            <li class="skill-chip" data-pct="70"><span>SQLite</span></li>
+            <li class="skill-chip" data-pct="90"><span>Jupyter Notebook</span></li>
+            <li class="skill-chip" data-pct="60"><span>Groq API</span></li>
+          </ul>
+        </div>
+
+        <div class="skills-group reveal">
+          <h3>Libraries</h3>
+          <ul class="skill-chips">
+            <li class="skill-chip" data-pct="90"><span>NumPy</span></li>
+            <li class="skill-chip" data-pct="85"><span>pandas</span></li>
+            <li class="skill-chip" data-pct="80"><span>Matplotlib</span></li>
+            <li class="skill-chip" data-pct="60"><span>Xarray</span></li>
+            <li class="skill-chip" data-pct="70"><span>OpenCV</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2 class="title reveal">Get in Touch</h2>
+      <div class="contact">
+        <div class="panel reveal">
+          <h3>Let's Talk</h3>
+          <p class="muted">Have a role, project or research collab? I’m open.</p>
+          <div class="contact-list">
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i>
+              <div><b>Email</b>
+                <div><a class="link" href="mailto:kashishpatel017@gmail.com">kashishpatel017@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item"><i class="fa-brands fa-linkedin"></i>
+              <div><b>LinkedIn</b>
+                <div><a class="link" target="_blank"
+                    href="https://www.linkedin.com/in/kashish-patel29/">linkedin.com/in/kashish-patel29</a></div>
+              </div>
+            </div>
+            <div class="contact-item"><i class="fa-brands fa-github"></i>
+              <div><b>GitHub</b>
+                <div><a class="link" target="_blank" href="https://github.com/kp-kashish">github.com/kp-kashish</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item"><i class="fa-solid fa-file-arrow-down"></i>
+              <div><b>Resume</b>
+                <div><a class="link" href="assets/Kashish_Patel_CV.pdf" download>Download CV (PDF)</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Send a Message</h3>
+          <form class="form" action="mailto:kashishpatel017@gmail.com" method="post" enctype="text/plain">
+            <div><input name="name" placeholder="Your name" required></div>
+            <div style="margin-top:10px"><input type="email" name="email" placeholder="Your email" required></div>
+            <div style="margin-top:10px"><textarea name="message" placeholder="Your message..." required></textarea>
+            </div>
+            <div class="actions"><button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Send
+                Message</button></div>
+          </form>
+          <p class="muted" style="margin-top:8px;font-size:12px">Uses your email client. We can wire Formspree later.
+          </p>
+        </div>
+      </div>
+      <div class="footer-note">&copy; 2025 Kashishkumar Patel.</div>
+    </section>
+
+  </main>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* Theme toggle */
+    const root = document.documentElement,
+      tBtn = document.getElementById('themeToggle'),
+      tIcon = document.getElementById('themeIcon');
+    const saved = localStorage.getItem('theme');
+    if (saved) { root.setAttribute('data-theme', saved); setIcon(saved); }
+    tBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      setIcon(next);
+    });
+    function setIcon(mode) {
+      tIcon.className = mode === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      tIcon.style.color = mode === 'dark' ? '#ffd166' : '';
+    }
+
+    /* Emoji Typewriter — photo stays static */
+    const typed = document.getElementById('typed');
+    const lines = [
+      "I_like_to_code.py 🧠⌨️",
+      "I love coffee ☕",
+      "I BUILD ML SYSTEMS THAT SHIP 🚀",
+      "debug > sleep 🐛😴"
+    ];
+    let li = 0, ci = 0, del = false;
+    (function loop() {
+      const t = lines[li];
+      if (!del) {
+        typed.textContent = t.slice(0, ++ci);
+        if (ci === t.length) { del = true; return setTimeout(loop, 900); }
+      } else {
+        typed.textContent = t.slice(0, --ci);
+        if (ci === 0) { del = false; li = (li + 1) % lines.length; }
+      }
+      setTimeout(loop, (del ? 35 : 60) + Math.random() * 45);
+    })();
+
+    /* Scroll reveal (replays on up/down) */
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+        else { e.target.classList.remove('visible'); }
+      });
+    }, { threshold: .18, rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* Projects scroller: edges + arrows + wheel + keyboard */
+    const scroller = document.getElementById('projScroller');
+    const track = document.getElementById('projTrack');
+    const prevBtn = document.getElementById('projPrev');
+    const nextBtn = document.getElementById('projNext');
+
+    function updateEdges() {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      const left = track.scrollLeft;
+      scroller.classList.toggle('has-left', left > 4);
+      scroller.classList.toggle('has-right', left < max - 4);
+      prevBtn.toggleAttribute('disabled', left <= 4);
+      nextBtn.toggleAttribute('disabled', left >= max - 4);
+    }
+    function scrollByCard(dir) {
+      const card = track.querySelector('.project-card');
+      const amount = card ? (card.offsetWidth + 24) : 400;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+    // buttons
+    prevBtn.addEventListener('click', () => scrollByCard(-1));
+    nextBtn.addEventListener('click', () => scrollByCard(1));
+    // wheel → horizontal
+
+track.addEventListener('wheel', (e) => {
+  const max = track.scrollWidth - track.clientWidth;
+  const atLeft  = track.scrollLeft <= 0;
+  const atRight = track.scrollLeft >= max - 1;
+  const goingRight = e.deltaY > 0;
+  const goingLeft  = e.deltaY < 0;
+  // Convert vertical -> horizontal only when we can move the carousel
+  const shouldHScroll =
+    Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
+    ((goingRight && !atRight) || (goingLeft && !atLeft));
+  if (shouldHScroll) {
+    e.preventDefault();
+    track.scrollLeft += e.deltaY;
+  }
+}, { passive: false });
+    // keyboard (when focused)
+    track.setAttribute('tabindex', '0');
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') scrollByCard(1);
+      if (e.key === 'ArrowLeft') scrollByCard(-1);
+    });
+    // observe scroll/resize
+    track.addEventListener('scroll', updateEdges);
+    new ResizeObserver(updateEdges).observe(track);
+    window.addEventListener('load', updateEdges);
+  </script>
+</body>
+
+</html>
