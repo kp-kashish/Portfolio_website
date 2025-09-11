@@ -12,22 +12,26 @@
   <link rel="canonical" href="https://kashish.website/">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Kashish Patel — AI/ML Engineer. Portfolio showcasing projects in multimodal fusion, LLM fine-tuning, and computer vision.">
-  <meta name="keywords" content="Kashish Patel, AI Engineer, Machine Learning, Portfolio, Multimodal AI, LLM, Computer Vision, NLP">
+  <meta name="description"
+    content="Kashish Patel — AI/ML Engineer. Portfolio showcasing projects in multimodal fusion, LLM fine-tuning, and computer vision.">
+  <meta name="keywords"
+    content="Kashish Patel, AI Engineer, Machine Learning, Portfolio, Multimodal AI, LLM, Computer Vision, NLP">
   <meta name="author" content="Kashish Patel">
 
   <!-- Open Graph (OG) Meta Tags for social sharing -->
   <meta property="og:title" content="Kashish Patel — AI/ML Engineer">
-  <meta property="og:description" content="Explore Kashish Patel’s projects in multimodal learning, LLM fine-tuning, and AI research.">
-  <meta property="og:image" content="https://kashish.website/assets/og-card.jpg">
-  <meta property="og:url"   content="https://kashish.website/">
+  <meta property="og:description"
+    content="Explore Kashish Patel’s projects in multimodal learning, LLM fine-tuning, and AI research.">
+  <meta property="og:image" content="https://kashish.website/assets/og-card2.jpg">
+  <meta property="og:url" content="https://kashish.website/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card (for nice Twitter/LinkedIn previews) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kashish Patel — AI/ML Engineer">
-  <meta name="twitter:description" content="Portfolio showcasing AI/ML projects including multimodal fusion, LLM fine-tuning, and computer vision.">
-  <meta name="twitter:image" content="https://kashish.website/assets/og-card.jpg">
+  <meta name="twitter:description"
+    content="Portfolio showcasing AI/ML projects including multimodal fusion, LLM fine-tuning, and computer vision.">
+  <meta name="twitter:image" content="https://kashish.website/assets/og-card2.jpg">
 
 
   <!-- Fonts & Icons -->
@@ -783,6 +787,147 @@
     .proj-next {
       right: -6px
     }
+
+    :target {
+      scroll-margin-top: 80px;
+    }
+
+    /* keeps anchors visible under the header */
+
+
+    /* ===== Mobile layout & header & form polish ===== */
+
+    /* Safe scrolling behavior */
+    .projects-track {
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+    }
+
+    .projects-scroller {
+      overscroll-behavior-y: contain;
+    }
+
+    /* Compact header for phones */
+    @media (max-width: 680px) {
+      .header {
+        height: 58px;
+        padding: 0 12px;
+        backdrop-filter: saturate(140%) blur(6px);
+        background: color-mix(in oklab, var(--surface) 80%, transparent);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero {
+        padding-top: 66px;
+      }
+
+      .social {
+        gap: 10px;
+      }
+
+      .actions {
+        gap: 8px;
+      }
+
+      .actions .btn {
+        padding: 8px;
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        font-size: 0;
+      }
+
+      .actions .btn i {
+        font-size: 16px;
+      }
+
+      .actions .btn .btn-label {
+        display: none;
+      }
+    }
+
+    /* Hero/photo layout */
+    @media (max-width: 820px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        row-gap: 18px;
+        text-align: center;
+      }
+
+      .profile-wrap {
+        order: -1;
+      }
+
+      .profile {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Spacing between photos & about section */
+    @media (max-width: 820px) {
+      .about {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .about img {
+        height: auto;
+        max-height: 380px;
+        border-radius: 16px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .title {
+        margin-bottom: 36px;
+        font-size: 28px;
+        letter-spacing: .18em;
+      }
+    }
+
+    /* Project cards: responsive width; hide arrows */
+    @media (max-width: 820px) {
+      .project-card {
+        flex: 0 0 clamp(280px, 88vw, 420px);
+        min-height: 300px;
+        padding: 18px;
+      }
+
+      .proj-arrow {
+        display: none;
+      }
+
+      .projects-scroller::before,
+      .projects-scroller::after {
+        width: 48px;
+      }
+    }
+
+    /* Indent bullets in Experience/Education */
+    .list .bullets {
+      padding-left: 20px;
+    }
+
+    .list .row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    /* Contact section spacing */
+    @media (max-width: 820px) {
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -792,16 +937,17 @@
   <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="social">
-      <a class="icon-link" href="https://www.linkedin.com/in/kashish-patel29/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-          class="fab fa-linkedin"></i></a>
-      <a class="icon-link" href="https://github.com/kp-kashish" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-          class="fab fa-github"></i></a>
+      <a class="icon-link" href="https://www.linkedin.com/in/kashish-patel29/" target="_blank" rel="noopener noreferrer"
+        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a class="icon-link" href="https://github.com/kp-kashish" target="_blank" rel="noopener noreferrer"
+        aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a class="icon-link" href="https://www.instagram.com/kp_kashish?igsh=bXdwaWZ2ZDAxYzBj&utm_source=qr"
         target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
     <div class="actions">
-      <a class="btn" href="assets/Kashish_Cv.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-      <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
+      <a class="btn" href="assets/Kashish_Cv.pdf" download><i class="fa-solid fa-file-arrow-down"></i><span
+          class="btn-label">Download CV</span></a>
+      <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i><span class="btn-label">Get in Touch</span></a>
       <button class="toggle" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"
           id="themeIcon"></i></button>
     </div>
@@ -841,7 +987,7 @@
     <section id="about" class="section">
       <h2 class="title reveal">About me</h2>
       <div class="about">
-        <img class="reveal"  src="assets/Image.jpg" alt="Kashish Patel" loading="lazy" width="720" height="480">
+        <img class="reveal" src="assets/Image.jpg" alt="Kashish Patel" loading="lazy" width="720" height="480">
         <div class="reveal" style="max-width: 800px; text-align: justify; line-height: 1.8; margin: auto;">
           <p>
             Hey 👋🏼 I am a Computer Science Master’s student based in Germany, specializing in
@@ -968,8 +1114,8 @@
                 <li>Achieved the best performance with feature-level stochastic fusion, reaching an average R² of 0.64
                   and RMSE of 23.4.</li>
               </ul>
-              <div class="stack"><span class="tag">PyTorch</span><span class="tag">Multi-View</span><span class="tag">VAE/IB</span><span
-                  class="tag">Fusion</span></div>
+              <div class="stack"><span class="tag">PyTorch</span><span class="tag">Multi-View</span><span
+                  class="tag">VAE/IB</span><span class="tag">Fusion</span></div>
               <div class="links"><a class="link"
                   href="https://github.com/kp-kashish/Deep-Multi-view-Information-Bottleneck-Methods-Implementation"
                   target="_blank"><i class="fa-brands fa-github"></i> Code</a></div>
@@ -1004,7 +1150,7 @@
                 <li>Reduced frame processing time by 30% through NumPy optimization and asynchronous image capture.</li>
               </ul>
               <div class="stack"><span class="tag">OpenCV</span><span class="tag">NumPy</span><span
-                    class="tag">Raspberry Pi</span></div>
+                  class="tag">Raspberry Pi</span></div>
               <div class="links"><a class="link" href="https://github.com/kp-kashish" target="_blank"><i
                     class="fa-brands fa-github"></i> Code</a></div>
             </article>
@@ -1020,7 +1166,7 @@
                   errors.</li>
               </ul>
               <div class="stack"><span class="tag">Android</span><span class="tag">Kotlin</span><span
-                    class="tag">Firebase</span></div>
+                  class="tag">Firebase</span></div>
               <div class="links"><a class="link" href="https://github.com/kp-kashish" target="_blank"><i
                     class="fa-brands fa-github"></i> Code</a></div>
             </article>
@@ -1126,15 +1272,27 @@
 
         <div class="panel reveal">
           <h3>Send a Message</h3>
-          <form class="form" action="mailto:kashishpatel017@gmail.com" method="post" enctype="text/plain">
+          <form class="form" id="contactForm" action="https://formspree.io/f/mldwzyej" method="POST">
             <div><input name="name" placeholder="Your name" required></div>
             <div style="margin-top:10px"><input type="email" name="email" placeholder="Your email" required></div>
             <div style="margin-top:10px"><textarea name="message" placeholder="Your message..." required></textarea>
             </div>
-            <div class="actions"><button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Send
-                Message</button></div>
+
+            <input type="hidden" name="_subject" value="Portfolio contact: kashish.website" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="actions">
+              <button class="btn" type="submit">
+                <i class="fa-regular fa-paper-plane"></i> <span class="btn-label">Send Message</span>
+              </button>
+            </div>
+
+            <p id="formStatus" class="muted" style="margin-top:8px;font-size:12px"></p>
           </form>
-          <p class="muted" style="margin-top:8px;font-size:12px">Uses your email client. We can wire Formspree later.
+
+          <p class="muted" style="margin-top:6px;font-size:12px">
+            Prefer email? <a class="link"
+              href="mailto:kashishpatel017@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Kashish%2C%0A%0A">kashishpatel017@gmail.com</a>
           </p>
         </div>
       </div>
@@ -1216,21 +1374,21 @@
     nextBtn.addEventListener('click', () => scrollByCard(1));
     // wheel → horizontal
 
-track.addEventListener('wheel', (e) => {
-  const max = track.scrollWidth - track.clientWidth;
-  const atLeft  = track.scrollLeft <= 0;
-  const atRight = track.scrollLeft >= max - 1;
-  const goingRight = e.deltaY > 0;
-  const goingLeft  = e.deltaY < 0;
-  // Convert vertical -> horizontal only when we can move the carousel
-  const shouldHScroll =
-    Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
-    ((goingRight && !atRight) || (goingLeft && !atLeft));
-  if (shouldHScroll) {
-    e.preventDefault();
-    track.scrollLeft += e.deltaY;
-  }
-}, { passive: false });
+    track.addEventListener('wheel', (e) => {
+      const max = track.scrollWidth - track.clientWidth;
+      const atLeft = track.scrollLeft <= 0;
+      const atRight = track.scrollLeft >= max - 1;
+      const goingRight = e.deltaY > 0;
+      const goingLeft = e.deltaY < 0;
+      // Convert vertical -> horizontal only when we can move the carousel
+      const shouldHScroll =
+        Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
+        ((goingRight && !atRight) || (goingLeft && !atLeft));
+      if (shouldHScroll) {
+        e.preventDefault();
+        track.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
     // keyboard (when focused)
     track.setAttribute('tabindex', '0');
     track.addEventListener('keydown', (e) => {
@@ -1242,6 +1400,42 @@ track.addEventListener('wheel', (e) => {
     new ResizeObserver(updateEdges).observe(track);
     window.addEventListener('load', updateEdges);
   </script>
+
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = 'Sending…';
+
+        try {
+          const data = new FormData(form);
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            status.textContent = '✅ Thanks! I’ll get back to you soon.';
+            form.reset();
+          } else {
+            const json = await res.json().catch(() => ({}));
+            status.textContent =
+              json.errors
+                ? json.errors.map(e => e.message).join(', ')
+                : '❌ Something went wrong. Please try again later.';
+          }
+        } catch (err) {
+          status.textContent = '⚠️ Network error. Please try again later.';
+        }
+      });
+    })();
+  </script>
+
 </body>
 
 </html>
