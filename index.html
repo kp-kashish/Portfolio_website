@@ -2,6 +2,16 @@
 <html lang="en" data-theme="dark">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX72ZJXQRJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HX72ZJXQRJ');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kashish Patel — AI/ML Engineer</title>
@@ -236,6 +246,7 @@
       column-gap: 110px;
       row-gap: 28px
     }
+
     .availability {
       display: inline-flex;
       align-items: center;
@@ -244,7 +255,8 @@
       padding: 3px 10px;
       font-size: 12px;
       font-weight: 500;
-      color: #2ecc71; /* soft green */
+      color: #2ecc71;
+      /* soft green */
       border: 1px solid #2ecc71;
       border-radius: 999px;
       background: color-mix(in oklab, #2ecc71 12%, transparent);
@@ -286,7 +298,8 @@
       font-weight: 800;
       letter-spacing: .10em;
       text-transform: uppercase;
-      color: var(--text); /* stronger contrast */
+      color: var(--text);
+      /* stronger contrast */
     }
 
 
@@ -608,7 +621,7 @@
       gap: 10px;
       list-style: none
     }
-    
+
 
     .skill-chip {
       position: relative;
@@ -835,22 +848,33 @@
       .actions .btn {
         width: 38px;
         height: 38px;
-        padding: 0;                 /* remove leftover padding */
+        padding: 0;
+        /* remove leftover padding */
         border-radius: 999px;
-        display: inline-flex;       /* keep it a flex container */
-        align-items: center;        /* vertical centering */
-        justify-content: center;    /* horizontal centering */
-        gap: 0;                     /* no space because label is hidden */
-        font-size: 0;               /* hide text label on small screens */
+        display: inline-flex;
+        /* keep it a flex container */
+        align-items: center;
+        /* vertical centering */
+        justify-content: center;
+        /* horizontal centering */
+        gap: 0;
+        /* no space because label is hidden */
+        font-size: 0;
+        /* hide text label on small screens */
       }
+
       .actions .btn i {
-        font-size: 16px;            /* icon size */
+        font-size: 16px;
+        /* icon size */
         line-height: 1;
       }
-      .actions .btn .btn-label { display: none; }
+
+      .actions .btn .btn-label {
+        display: none;
+      }
     }
-    
-    
+
+
 
     /* Hero/photo layout */
     @media (max-width: 820px) {
@@ -905,7 +929,8 @@
 
       @media (max-width: 820px) {
         .proj-arrow {
-          display: grid;              /* ensure they render */
+          display: grid;
+          /* ensure they render */
           width: 34px;
           height: 34px;
           top: 50%;
@@ -913,8 +938,15 @@
           opacity: 0.9;
           z-index: 5;
         }
-        .proj-prev { left: -4px; }    /* tuck just inside the edge */
-        .proj-next { right: -4px; }
+
+        .proj-prev {
+          left: -4px;
+        }
+
+        /* tuck just inside the edge */
+        .proj-next {
+          right: -4px;
+        }
       }
 
       .projects-scroller::before,
@@ -935,9 +967,12 @@
 
     @media (max-width: 820px) {
       .hero-links {
-        justify-content: center;   /* center the row */
-        gap: 18px;                  /* a touch more spacing looks better on phones */}
+        justify-content: center;
+        /* center the row */
+        gap: 18px;
+        /* a touch more spacing looks better on phones */
       }
+    }
 
     /* Contact section spacing */
     @media (max-width: 820px) {
@@ -951,7 +986,7 @@
       }
     }
 
-        /* Profile Badge */
+    /* Profile Badge */
     .profile-wrap {
       position: relative;
       display: inline-block;
@@ -967,7 +1002,7 @@
       border-radius: 12px;
       font-size: 14px;
       font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -976,7 +1011,8 @@
     .profile-badge .dot {
       width: 8px;
       height: 8px;
-      background: #10b981; /* green */
+      background: #10b981;
+      /* green */
       border-radius: 50%;
       display: inline-block;
     }
@@ -991,184 +1027,282 @@
       }
     }
 
-        /* Photo-top badge — theme-blended */
-    .profile-wrap { position: relative; display: inline-block; }
+    /* Photo-top badge — theme-blended */
+    .profile-wrap {
+      position: relative;
+      display: inline-block;
+    }
 
-    .profile-badge{
-      position:absolute;
-      top:16px; left:16px;
-      display:flex; align-items:center; gap:8px;
+    .profile-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
 
-      padding:6px 12px;
-      border-radius:999px;
+      padding: 6px 12px;
+      border-radius: 999px;
 
       /* match surfaces + subtle glass */
       background: color-mix(in oklab, var(--surface) 92%, transparent);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       color: var(--text);
       backdrop-filter: saturate(140%) blur(6px);
       box-shadow: var(--shadow);
 
-      font-weight:600;
-      font-size:13px;
-      letter-spacing:.02em;
-      white-space:nowrap;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .02em;
+      white-space: nowrap;
     }
 
-    .profile-badge .dot{
-      width:8px;height:8px;border-radius:50%;
-      background:#22c55e; /* green */
-      box-shadow:0 0 0 2px color-mix(in oklab, #22c55e 22%, transparent);
+    .profile-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      /* green */
+      box-shadow: 0 0 0 2px color-mix(in oklab, #22c55e 22%, transparent);
     }
 
     /* Light mode keeps contrast clean */
-    html[data-theme="light"] .profile-badge{
+    html[data-theme="light"] .profile-badge {
       background: color-mix(in oklab, #ffffff 88%, var(--surface) 12%);
       border-color: color-mix(in oklab, var(--border) 70%, #ffffff 30%);
     }
 
     /* Mobile: a little smaller & tucked in */
-    @media (max-width:680px){
-      .profile-badge{ font-size:12px; padding:4px 10px; top:10px; left:10px; }
+    @media (max-width:680px) {
+      .profile-badge {
+        font-size: 12px;
+        padding: 4px 10px;
+        top: 10px;
+        left: 10px;
+      }
     }
 
-        /* ===== Top availability chip (theme-blended + pulse dot) ===== */
-    .avail-chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
+    /* ===== Top availability chip (theme-blended + pulse dot) ===== */
+    .avail-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
       background: color-mix(in oklab, var(--surface) 92%, transparent);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       color: var(--text);
-      font-weight:600; font-size:14px; letter-spacing:.02em;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: .02em;
       box-shadow: var(--shadow);
       backdrop-filter: saturate(140%) blur(6px);
     }
-    .avail-chip .dot{
-      width:10px; height:10px; border-radius:50%;
-      background:#22c55e;              /* green */
+
+    .avail-chip .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #22c55e;
+      /* green */
       animation: pulse 1.8s ease-out infinite;
     }
 
     /* Reuse the same pulse on the photo role badge dot */
-    .profile-badge .dot{
-      width:8px; height:8px; border-radius:50%;
-      background:#22c55e;
+    .profile-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
       animation: pulse 2.2s ease-out infinite;
     }
 
     /* Pulse animation */
-    @keyframes pulse{
-      0%   { box-shadow:0 0 0 0 rgba(34,197,94,.55); transform: scale(1); }
-      70%  { box-shadow:0 0 0 10px rgba(34,197,94,0); transform: scale(1.02); }
-      100% { box-shadow:0 0 0 0 rgba(34,197,94,0);  transform: scale(1); }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, .55);
+        transform: scale(1);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+        transform: scale(1.02);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        transform: scale(1);
+      }
     }
 
     /* Smaller on phones */
-    @media (max-width:680px){
-      .avail-chip{ font-size:12px; padding:6px 12px; gap:8px; }
+    @media (max-width:680px) {
+      .avail-chip {
+        font-size: 12px;
+        padding: 6px 12px;
+        gap: 8px;
+      }
     }
-    
-        /* Theme-aware status-dot color */
+
+    /* Theme-aware status-dot color */
     :root {
-      --status-dot: #60A5FA;          /* blue for dark mode */
+      --status-dot: #60A5FA;
+      /* blue for dark mode */
     }
+
     html[data-theme="light"] {
-      --status-dot: #10b981;          /* emerald in light mode */
+      --status-dot: #10b981;
+      /* emerald in light mode */
     }
 
     /* Top availability chip — more spacing below */
-    .avail-chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
+    .avail-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
       background: color-mix(in oklab, var(--surface) 92%, transparent);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       color: var(--text);
-      font-weight:600; font-size:14px; letter-spacing:.02em;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: .02em;
       box-shadow: var(--shadow);
       backdrop-filter: saturate(140%) blur(6px);
-      margin-bottom: 28px;            /* ← more space above your name */
+      margin-bottom: 28px;
+      /* ← more space above your name */
     }
-    .avail-chip .dot{
-      width:10px; height:10px; border-radius:50%;
+
+    .avail-chip .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       background: var(--status-dot);
       animation: pulse 1.8s ease-out infinite;
     }
 
     /* Photo badge — bigger + clearer spacing/location */
-    .profile-badge{
-      position:absolute;
-      top: 12px;                      /* adjust if you want it tighter/looser */
+    .profile-badge {
+      position: absolute;
+      top: 12px;
+      /* adjust if you want it tighter/looser */
       left: 12px;
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;              /* bigger */
-      border-radius:999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      /* bigger */
+      border-radius: 999px;
       background: color-mix(in oklab, var(--surface) 92%, transparent);
-      border:1px solid var(--border);
+      border: 1px solid var(--border);
       color: var(--text);
-      font-weight:700;
-      font-size:16px;                 /* bigger label */
+      font-weight: 700;
+      font-size: 16px;
+      /* bigger label */
       box-shadow: var(--shadow);
       backdrop-filter: saturate(140%) blur(6px);
     }
-    .profile-badge .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: var(--status-dot);  /* blue in dark, emerald in light */
+
+    .profile-badge .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--status-dot);
+      /* blue in dark, emerald in light */
       animation: pulse 2.2s ease-out infinite;
     }
 
     /* Pulse animation (shared) */
-    @keyframes pulse{
-      0%   { box-shadow:0 0 0 0 color-mix(in oklab, var(--status-dot) 55%, transparent); transform: scale(1); }
-      70%  { box-shadow:0 0 0 10px color-mix(in oklab, var(--status-dot) 0%, transparent); transform: scale(1.02); }
-      100% { box-shadow:0 0 0 0 color-mix(in oklab, var(--status-dot) 0%, transparent);  transform: scale(1); }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 color-mix(in oklab, var(--status-dot) 55%, transparent);
+        transform: scale(1);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px color-mix(in oklab, var(--status-dot) 0%, transparent);
+        transform: scale(1.02);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 color-mix(in oklab, var(--status-dot) 0%, transparent);
+        transform: scale(1);
+      }
     }
 
     /* Phone tweaks: slightly smaller */
-    @media (max-width:680px){
-      .avail-chip{ font-size:12px; padding:6px 12px; gap:8px; margin-bottom:20px; }
-      .profile-badge{ font-size:14px; padding:8px 12px; top:10px; left:10px; }
-      .profile-badge .dot, .avail-chip .dot{ width:8px; height:8px; }
+    @media (max-width:680px) {
+      .avail-chip {
+        font-size: 12px;
+        padding: 6px 12px;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .profile-badge {
+        font-size: 14px;
+        padding: 8px 12px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .profile-badge .dot,
+      .avail-chip .dot {
+        width: 8px;
+        height: 8px;
+      }
     }
 
-        /* Slightly more breathing room under the name */
-    .h-eyebrow { margin-bottom: 6px; }
-    .type-row  { margin-top: 10px; }
+    /* Slightly more breathing room under the name */
+    .h-eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .type-row {
+      margin-top: 10px;
+    }
 
     /* Make the availability chip sit a touch lighter & crisper */
-    .avail-chip{
+    .avail-chip {
       background: color-mix(in oklab, var(--surface) 88%, transparent);
       border: 1px solid color-mix(in oklab, var(--border) 70%, #000 30%);
-      box-shadow: 0 8px 24px rgba(0,0,0,.22);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
     }
 
     /* Photo badge: a hair more contrast + softer rounding */
-    .profile-badge{
+    .profile-badge {
       border: 1px solid color-mix(in oklab, var(--border) 70%, #000 30%);
       border-radius: 14px;
     }
 
     /* Make the typed line read tighter on desktop */
-    .typewrap{
+    .typewrap {
       letter-spacing: .14em;
       font-weight: 800;
     }
 
     /* Keep badges readable on very small phones */
-    @media (max-width: 380px){
-      .profile-badge{ font-size: 13px; padding: 6px 10px; }
-      .avail-chip{ font-size: 12px; padding: 6px 10px; }
+    @media (max-width: 380px) {
+      .profile-badge {
+        font-size: 13px;
+        padding: 6px 10px;
+      }
+
+      .avail-chip {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
     }
 
     /* Respect reduced motion (turn off dot pulse) */
-    @media (prefers-reduced-motion: reduce){
-      .avail-chip .dot, .profile-badge .dot { animation: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+
+      .avail-chip .dot,
+      .profile-badge .dot {
+        animation: none !important;
+      }
     }
-
-
-
-
   </style>
 </head>
 
